@@ -1,133 +1,161 @@
-// 导航栏滚动效果
-const navbar = document.getElementById('navbar');
-const navToggle = document.getElementById('navToggle');
-const navMenu = document.getElementById('navMenu');
+(function(){
+  "use strict";
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+  /* ---------- 滚动进度条 & 导航状态 & 返回顶部 ---------- */
+  var progress = document.getElementById("progress");
+  var nav = document.getElementById("nav");
+  var toTop = document.getElementById("toTop");
+
+  function onScroll(){
+    var st = window.scrollY || document.documentElement.scrollTop;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = (h > 0 ? (st / h) * 100 : 0) + "%";
+    nav.classList.toggle("scrolled", st > 10);
+    toTop.classList.toggle("show", st > 600);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  toTop.addEventListener("click", function(){
+    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+  });
+
+  /* ---------- 移动端菜单 ---------- */
+  var burger = document.getElementById("burger");
+  var mMenu = document.getElementById("mMenu");
+  burger.addEventListener("click", function(){
+    var open = mMenu.classList.toggle("open");
+    burger.classList.toggle("open", open);
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  mMenu.querySelectorAll("a").forEach(function(a){
+    a.addEventListener("click", function(){
+      mMenu.classList.remove("open");
+      burger.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  /* ---------- 滚动侦测（Scrollspy） ---------- */
+  var spyLinks = Array.prototype.slice.call(document.querySelectorAll("[data-spy]"));
+  var spySections = ["overview","space","scenarios","outcomes"].map(function(id){
+    return document.getElementById(id);
+  });
+  var spyObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        spyLinks.forEach(function(a){
+          a.classList.toggle("active", a.getAttribute("data-spy") === entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: "-30% 0px -60% 0px" });
+  spySections.forEach(function(s){ if(s) spyObserver.observe(s); });
+
+  /* ---------- 滚动浮现（带同组错峰延迟） ---------- */
+  var rvEls = Array.prototype.slice.call(document.querySelectorAll(".rv"));
+  rvEls.forEach(function(el){
+    var siblings = el.parentElement ? Array.prototype.slice.call(el.parentElement.children).filter(function(c){
+      return c.classList && c.classList.contains("rv");
+    }) : [];
+    var idx = siblings.indexOf(el);
+    if(idx > 0) el.style.transitionDelay = Math.min(idx, 4) * 90 + "ms";
+  });
+  var rvObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+        rvObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+  rvEls.forEach(function(el){ rvObserver.observe(el); });
+
+  /* ---------- 数字滚动 ---------- */
+  function countUp(el){
+    var target = parseInt(el.getAttribute("data-count"), 10);
+    if(reduceMotion){ el.textContent = target; return; }
+    var start = null, dur = 1200;
+    function tick(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased);
+      if(p < 1) requestAnimationFrame(tick);
     }
-});
-
-// 移动端菜单切换
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
-
-// 点击导航链接后关闭移动端菜单
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
+    requestAnimationFrame(tick);
+  }
+  var counters = document.querySelectorAll("[data-count]");
+  var cObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        countUp(entry.target);
+        cObserver.unobserve(entry.target);
+      }
     });
-});
+  }, { threshold: 0.6 });
+  counters.forEach(function(c){ cObserver.observe(c); });
 
-// 场景标签切换
-const tabBtns = document.querySelectorAll('.tab-btn');
-const scenarioPanels = document.querySelectorAll('.scenario-panel');
-
-tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const tabId = btn.dataset.tab;
-        
-        // 移除所有active状态
-        tabBtns.forEach(b => b.classList.remove('active'));
-        scenarioPanels.forEach(p => p.classList.remove('active'));
-        
-        // 添加当前active状态
-        btn.classList.add('active');
-        document.getElementById(tabId).classList.add('active');
-    });
-});
-
-// 滚动动画
-const revealElements = document.querySelectorAll('.feature-card, .overview-card, .construct-item, .spec-item, .impact-card, .scenario-card, .element-item');
-
-const revealOnScroll = () => {
-    const windowHeight = window.innerHeight;
-    const revealPoint = 150;
-    
-    revealElements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        
-        if (elementTop < windowHeight - revealPoint) {
-            element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
+  /* ---------- 六大核心功能 Tab 切换 ---------- */
+  var ftabs = document.querySelectorAll(".ftab");
+  var fpanels = document.querySelectorAll(".feat-panel");
+  ftabs.forEach(function(tab){
+    tab.addEventListener("click", function(){
+      var key = tab.getAttribute("data-fp");
+      ftabs.forEach(function(t){ t.classList.toggle("on", t === tab); });
+      fpanels.forEach(function(p){
+        var on = p.getAttribute("data-fp") === key;
+        p.classList.toggle("on", on);
+        if(on){ /* 重播入场动画 */
+          p.style.animation = "none"; void p.offsetWidth; p.style.animation = "";
         }
+      });
+      if(!reduceMotion) tab.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
     });
-};
+  });
 
-// 初始设置
-revealElements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'all 0.6s ease';
-});
-
-// 为不同元素设置延迟
-revealElements.forEach((el, index) => {
-    el.style.transitionDelay = `${(index % 6) * 0.1}s`;
-});
-
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
-
-// 平滑滚动到锚点
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offsetTop = target.offsetTop - 80;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
+  /* ---------- 教学场景筛选 ---------- */
+  var fbtns = document.querySelectorAll(".fbtn");
+  var scens = Array.prototype.slice.call(document.querySelectorAll(".scen"));
+  fbtns.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var f = btn.getAttribute("data-filter");
+      fbtns.forEach(function(b){ b.classList.toggle("on", b === btn); });
+      var visible = [];
+      scens.forEach(function(card){
+        var show = f === "all" || card.getAttribute("data-cat") === f;
+        card.classList.toggle("hide", !show);
+        if(show){ visible.push(card); card.style.animation = "none"; void card.offsetWidth; card.style.animation = "fadeUp .45s ease both"; }
+      });
+      /* 筛选后只剩一张卡时占满整行，避免半行孤卡 */
+      visible.forEach(function(c){ c.classList.remove("wide"); });
+      if(visible.length === 1) visible[0].classList.add("wide");
     });
-});
+  });
 
-// 数字计数动画
-const animateValue = (element, start, end, duration) => {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        const value = Math.floor(progress * (end - start) + start);
-        element.textContent = value;
-        if (progress < 1) {
-            window.requestAnimationFrame(step);
-        }
-    };
-    window.requestAnimationFrame(step);
-};
-
-// 检测specs区域进入视口时触发动画
-const specsSection = document.querySelector('.specs-grid');
-let specsAnimated = false;
-
-const animateSpecs = () => {
-    if (specsAnimated) return;
-    
-    const rect = specsSection?.getBoundingClientRect();
-    if (rect && rect.top < window.innerHeight - 100) {
-        specsAnimated = true;
-        // 这里可以添加数字动画效果
+  /* ---------- 体验式学习循环：自动轮转 + 点击跳转 ---------- */
+  var cycle = document.getElementById("cycle");
+  if(cycle){
+    var nodes = cycle.querySelectorAll(".cycle-node");
+    var cur = 0, timer = null, hovered = false;
+    function setActive(i){
+      cur = i;
+      nodes.forEach(function(n, k){ n.classList.toggle("on", k === i); });
     }
-};
-
-window.addEventListener('scroll', animateSpecs);
-
-// 视差效果（英雄区粒子）
-window.addEventListener('mousemove', (e) => {
-    const particles = document.querySelector('.hero-particles');
-    if (particles) {
-        const x = (e.clientX / window.innerWidth - 0.5) * 20;
-        const y = (e.clientY / window.innerHeight - 0.5) * 20;
-        particles.style.transform = `translate(${x}px, ${y}px)`;
+    nodes.forEach(function(n, i){
+      n.addEventListener("click", function(){ setActive(i); restart(); });
+      n.addEventListener("mouseenter", function(){ hovered = true; });
+      n.addEventListener("mouseleave", function(){ hovered = false; });
+    });
+    function restart(){
+      if(timer) clearInterval(timer);
+      if(!reduceMotion){
+        timer = setInterval(function(){
+          if(!hovered) setActive((cur + 1) % nodes.length);
+        }, 2600);
+      }
     }
-});
-
-console.log('%c🎓 沉浸式数智学习空间', 'font-size: 20px; font-weight: bold; color: #6366f1;');
-console.log('%c让知识"活"起来，让学习"动"起来', 'font-size: 14px; color: #94a3b8;');
+    restart();
+  }
+})();

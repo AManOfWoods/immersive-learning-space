@@ -1,814 +1,528 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 跨学科沉浸式数智学习空间</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 跨学科沉浸式数智学习空间</title>
+<meta name="description" content="以「沉浸式投影 + 互动触控 + AI 赋能」为技术底座，以「体验式学习 + 跨学科融合」为教育理念的新型教学空间。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23FF6B4A'/%3E%3Cpath d='M32 10l4.6 12.2L49 22l-9.4 8.3L42.4 43 32 36.2 21.6 43l2.8-12.7L15 22l12.4-1.8z' fill='%23FFF9F0'/%3E%3Ccircle cx='49' cy='14' r='4' fill='%23FFC53D'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://miaoda.feishu.cn">
+<link rel="preconnect" href="https://sf3-scmcdn-cn.feishucdn.com" crossorigin>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-icon">◈</span>
-                <span class="logo-text">沉浸式数智学习空间</span>
-            </div>
-            <div class="nav-menu" id="navMenu">
-                <a href="#overview" class="nav-link">项目概述</a>
-                <a href="#design" class="nav-link">空间设计</a>
-                <a href="#features" class="nav-link">核心功能</a>
-                <a href="#scenarios" class="nav-link">教学场景</a>
-                <a href="#impact" class="nav-link">预期成效</a>
-            </div>
-            <button class="nav-toggle" id="navToggle" aria-label="菜单">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
+<div id="progress"></div>
+
+<!-- ================= 导航 ================= -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#top" aria-label="回到顶部">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#FF6B4A"/><path d="M32 10l4.6 12.2L49 22l-9.4 8.3L42.4 43 32 36.2 21.6 43l2.8-12.7L15 22l12.4-1.8z" fill="#FFF9F0"/><circle cx="49" cy="14" r="4" fill="#FFC53D"/></svg>
+      <span>沉浸式数智学习空间</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#overview" data-spy="overview">项目概述</a>
+      <a href="#space" data-spy="space">空间设计</a>
+      <a href="#scenarios" data-spy="scenarios">教学场景</a>
+      <a href="#outcomes" data-spy="outcomes">预期成效</a>
     </nav>
+    <button class="burger" id="burger" aria-label="打开菜单" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="m-menu" id="mMenu">
+    <a href="#overview" data-spy="overview">项目概述</a>
+    <a href="#space" data-spy="space">空间设计</a>
+    <a href="#scenarios" data-spy="scenarios">教学场景</a>
+    <a href="#outcomes" data-spy="outcomes">预期成效</a>
+  </nav>
+</header>
 
-    <!-- 英雄区 -->
-    <section class="hero">
-        <div class="hero-bg">
-            <div class="hero-gradient"></div>
-            <div class="hero-particles"></div>
+<!-- ================= Hero ================= -->
+<section class="hero" id="top">
+  <div class="hero-copy">
+    <span class="hero-tag"><span class="dot"></span>沉浸式数智学习空间 · 在沉浸中「做中学」</span>
+    <h1>AI 跨学科<br><span class="hl">沉浸式</span>数智学习空间</h1>
+    <p class="sub">把「课本里的世界」，变成<b>学生可以走进去的世界</b></p>
+    <p class="desc">以「沉浸式投影 + 互动触控 + AI 赋能」为技术底座，以「体验式学习 + 跨学科融合」为教育理念的新型教学空间——全校各学科都可以使用的共享教学空间。</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="num"><span data-count="270">0</span>°</div><div class="lbl">U 型三面墙沉浸投影</div></div>
+      <div class="stat"><div class="num">7680×1200</div><div class="lbl">px 超宽画幅 细腻清晰</div></div>
+      <div class="stat"><div class="num"><span data-count="6">0</span> 大</div><div class="lbl">多功能复合核心功能</div></div>
+      <div class="stat"><div class="num"><span data-count="10">0</span> 个</div><div class="lbl">学科教学应用场景</div></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-frame"><img src="images/hero-space.jpg" alt="沉浸式学习空间实景——三面墙环绕投影，学生身临其境感受学习内容" fetchpriority="high"></div>
+    <div class="hero-badge b1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11a5 5 0 0 1 10 0"/><path d="M4 11a8 8 0 0 1 16 0"/><circle cx="12" cy="14" r="2"/></svg>触控 · 体感 · 语音</div>
+    <div class="hero-badge b2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/><path d="M13 8h5a3 3 0 0 1 3 3v0"/><path d="M8 11v5a3 3 0 0 0 3 3h0"/></svg>50–70㎡ 灵活可变</div>
+    <div class="hero-badge b3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/></svg>做中学 · 玩中学</div>
+    <p class="hero-caption">沉浸式学习空间实景——三面墙环绕投影，学生身临其境感受学习内容</p>
+  </div>
+</section>
+
+<!-- ================= 一、项目概述 ================= -->
+<section class="section" id="overview">
+  <div class="sec-head rv">
+    <span class="sec-chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 19V6a2 2 0 0 1 2-2h13l-3 4 3 4H6a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h13"/></svg>项目概述</span>
+    <h2>让学习从「听别人讲」，变成「自己亲身经历」</h2>
+    <svg class="wave" width="150" height="10" viewBox="0 0 150 10" aria-hidden="true"><path d="M2 6 Q 12 1, 22 6 T 42 6 T 62 6 T 82 6 T 102 6 T 122 6 T 142 6" fill="none" stroke="#FF9F1C" stroke-width="3.5" stroke-linecap="round"/></svg>
+    <p class="lead">传统教室难以承载体验式、探究式、项目式的新型学习方式，我们尝试给出一个新的答案。</p>
+  </div>
+
+  <!-- 项目背景 -->
+  <div class="ov-grid split">
+    <div class="block-card rv">
+      <h3 class="h3-title"><span class="ico" style="background:var(--coral)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.1 1.4 1.1 2.2h5c0-.8.4-1.6 1.1-2.2A6 6 0 0 0 12 3z"/></svg></span>项目背景</h3>
+      <p class="para">新一轮课程改革强调<strong>「核心素养导向」</strong>，要求打破学科壁垒，推进跨学科综合学习。《义务教育课程方案（2022年版）》明确提出「设立跨学科主题学习活动，加强学科间相互关联，带动课程综合化实施，强化实践性要求」。</p>
+      <p class="para">然而，传统教室的物理空间形态——讲台、黑板、整齐排列的课桌椅——本质上是为「教师讲授、学生听讲」的单向知识传递设计的，难以承载体验式、探究式、项目式的新型学习方式。</p>
+      <div class="callout co-coral">
+        <div class="co-t"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.9 5.1L19 9l-5.1 1.9L12 16l-1.9-5.1L5 9l5.1-1.9z"/></svg>我们的思考</div>
+        <p>如果知识是立体的、关联的、鲜活的，为什么学习空间只能是平面的、孤立的、静态的？<br><strong>跨学科沉浸式学习空间，就是要把「课本里的世界」变成「学生可以走进去的世界」，让学习从「听别人讲」变成「自己亲身经历」。</strong></p>
+      </div>
+    </div>
+
+    <!-- 空间定位 -->
+    <div class="block-card rv" style="background:linear-gradient(160deg,var(--violet-soft),var(--teal-soft));border-color:transparent">
+      <h3 class="h3-title"><span class="ico" style="background:var(--violet)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>空间定位</h3>
+      <p class="para"><strong>跨学科沉浸式学习空间</strong>是一个以「沉浸式投影 + 互动触控 + AI 赋能」为技术底座，以「体验式学习 + 跨学科融合」为教育理念的新型教学空间。</p>
+      <p class="para">它不是某一个学科的专用教室，而是<strong>全校各学科都可以使用的共享教学空间</strong>——语文老师可以带学生走进古诗的意境，科学老师可以带学生潜入深海，历史老师可以带学生穿越到古代，美术老师可以带学生徜徉在名画之中……</p>
+    </div>
+  </div>
+
+  <!-- 教育理念 -->
+  <div class="block-card rv" style="margin-top:26px">
+    <h3 class="h3-title"><span class="ico" style="background:var(--teal)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a7 7 0 0 1 7 7c0 4-3 7-7 11-4-4-7-7-7-11a7 7 0 0 1 7-7z"/><circle cx="12" cy="10" r="2.5"/></svg></span>教育理念</h3>
+    <p class="para">本空间以<strong>体验式学习理论</strong>（Experiential Learning）为核心教育学基础，借鉴建构主义学习观，重构「教」与「学」的关系。</p>
+
+    <!-- 体验式学习循环（可交互） -->
+    <div class="cycle-wrap" style="margin-top:22px">
+      <div class="cycle" id="cycle">
+        <div class="ring" aria-hidden="true"></div>
+        <div class="core"><b>体验式<br>学习循环</b></div>
+        <button class="cycle-node cn-1 on" data-cy="1" aria-label="具体体验">具体体验<small>Concrete Experience</small></button>
+        <button class="cycle-node cn-2" data-cy="2" aria-label="观察反思">观察反思<small>Reflective Observation</small></button>
+        <button class="cycle-node cn-3" data-cy="3" aria-label="抽象概念">抽象概念<small>Abstract Conceptualization</small></button>
+        <button class="cycle-node cn-4" data-cy="4" aria-label="主动检验">主动检验<small>Active Experimentation</small></button>
+      </div>
+      <div class="cycle-note" id="cycleNote">
+        <span class="who" style="background:var(--coral)">沉浸式空间的价值</span>
+        <p>沉浸式空间的价值，就在于为学习循环的<strong>第一环——「具体体验」</strong>提供了前所未有的可能性：学生不再是通过文字和图片「间接」了解知识，而是身临其境「直接」感受知识产生的情境。有了丰富、真实的体验作为基础，后续的反思、概念形成和应用检验才能真正发生。<span style="color:#B3A18C">（循环节点会依次流转，也可点击查看）</span></p>
+      </div>
+    </div>
+
+    <!-- 建构主义四要素 -->
+    <h4 style="font-weight:800;margin:30px 0 14px;font-size:17px">建构主义学习环境四要素</h4>
+    <div class="four-elems">
+      <div class="felem f1 rv"><div class="fe-t"><span class="n">境</span>情境</div><p>高度仿真的虚拟学习情境，知识在真实场景中呈现</p></div>
+      <div class="felem f2 rv"><div class="fe-t"><span class="n">协</span>协作</div><p>多人集体互动、分组协作，共同完成学习任务</p></div>
+      <div class="felem f3 rv"><div class="fe-t"><span class="n">话</span>会话</div><p>空间支持小组讨论、全班分享，在交流中建构意义</p></div>
+      <div class="felem f4 rv"><div class="fe-t"><span class="n">构</span>意义建构</div><p>通过亲身参与和互动，主动完成知识的建构</p></div>
+    </div>
+  </div>
+
+  <!-- 空间价值 -->
+  <div class="block-card rv" style="margin-top:26px">
+    <h3 class="h3-title"><span class="ico" style="background:var(--tangerine)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.2"/></svg></span>空间价值：与传统教室相比</h3>
+    <div class="cmp">
+      <div class="cmp-row"><div class="cmp-dim">学习方式</div><div class="cmp-old">听讲式、被动接受</div><div class="cmp-new">体验式、主动探究</div></div>
+      <div class="cmp-row"><div class="cmp-dim">知识呈现</div><div class="cmp-old">平面的、抽象的文字和图片</div><div class="cmp-new">立体的、具象的情境和体验</div></div>
+      <div class="cmp-row"><div class="cmp-dim">学科边界</div><div class="cmp-old">单科孤立教学</div><div class="cmp-new">跨学科融合学习</div></div>
+      <div class="cmp-row"><div class="cmp-dim">学生角色</div><div class="cmp-old">听众、观众</div><div class="cmp-new">参与者、探索者、创造者</div></div>
+      <div class="cmp-row"><div class="cmp-dim">教师角色</div><div class="cmp-old">知识传授者</div><div class="cmp-new">学习引导者、情境创设者</div></div>
+      <div class="cmp-row"><div class="cmp-dim">作品展示</div><div class="cmp-old">教室墙面、走廊展示</div><div class="cmp-new">沉浸式数字展墙，互动式呈现</div></div>
+      <div class="cmp-row"><div class="cmp-dim">空间形态</div><div class="cmp-old">固定的、单一功能的</div><div class="cmp-new">可变的、多功能复合的</div></div>
+    </div>
+  </div>
+</section>
+<!-- ================= 二、空间设计与功能布局 ================= -->
+<section class="section" id="space">
+  <div class="sec-head rv">
+    <span class="sec-chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/><path d="M13 8h5a3 3 0 0 1 3 3"/><path d="M8 11v5a3 3 0 0 0 3 3"/></svg>空间设计与功能布局</span>
+    <h2>一个被画面包裹的、可变的多功能复合空间</h2>
+    <svg class="wave" width="150" height="10" viewBox="0 0 150 10" aria-hidden="true"><path d="M2 6 Q 12 1, 22 6 T 42 6 T 62 6 T 82 6 T 102 6 T 122 6 T 142 6" fill="none" stroke="#12A594" stroke-width="3.5" stroke-linecap="round"/></svg>
+  </div>
+
+  <!-- 空间形态 -->
+  <div class="form-grid">
+    <div class="rv">
+      <div class="figure"><img src="images/projection-u270.jpg" alt="270°U型三面墙投影效果——左墙、正墙、右墙形成环绕式沉浸体验"></div>
+      <p class="fig-cap">270° U 型三面墙投影效果——左墙、正墙、右墙形成环绕式沉浸体验</p>
+    </div>
+    <div class="form-text rv">
+      <h3 class="h3-title"><span class="ico" style="background:var(--teal)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l6-5v18l-6-5zM9 8h4a3 3 0 0 1 3 3v2a3 3 0 0 0 3 3h2"/></svg></span>空间形态</h3>
+      <p>采用<strong>270° U 型三面墙沉浸式投影</strong>设计，左墙、正墙、右墙三面环绕投影，形成被画面包裹的沉浸感。学生站在空间中央，仿佛置身于另一个世界。</p>
+      <p>可依据校园空间大小选择硬件标准，并设计屏幕的开角程度，使产品最大效度地利用空间。</p>
+    </div>
+  </div>
+  <div class="rv" style="overflow:auto;margin-top:24px">
+    <table class="spec-table">
+      <colgroup><col style="width:18%"><col style="width:27%"><col style="width:55%"></colgroup>
+      <thead><tr><th>空间参数</th><th>规格</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><th class="k">推荐面积</th><td>50–70 ㎡</td><td>可容纳一个班级（25–30人）同时开展学习活动</td></tr>
+        <tr><th class="k">投影形式</th><td>270° U 型三面墙</td><td>左墙 + 正墙 + 右墙，画面连续无缝融合</td></tr>
+        <tr><th class="k">总分辨率</th><td>7680×1200 px</td><td>超宽画幅，细腻清晰</td></tr>
+        <tr><th class="k">互动方式</th><td>触控 + 体感 + 语音</td><td>支持墙面触控、肢体动作、语音指令多种交互</td></tr>
+        <tr><th class="k">空间布局</th><td>灵活可变</td><td>模块化座椅，可根据教学需要变换布局</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 六大核心功能 -->
+  <div style="margin-top:52px">
+    <h3 class="h3-title rv"><span class="ico" style="background:var(--coral)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></span>六大核心功能</h3>
+    <p class="para rv">这个空间不是单一功能的教室，而是一个<strong>多功能复合学习空间</strong>，可以承担六大核心功能：</p>
+    <div class="feat-tabs rv" id="featTabs" role="tablist">
+      <button class="ftab on" data-fp="1" role="tab"><span class="n">1</span>沉浸式授课空间</button>
+      <button class="ftab" data-fp="2" role="tab"><span class="n">2</span>互动体验工坊</button>
+      <button class="ftab" data-fp="3" role="tab"><span class="n">3</span>数字作品展示</button>
+      <button class="ftab" data-fp="4" role="tab"><span class="n">4</span>AI 创作工坊</button>
+      <button class="ftab" data-fp="5" role="tab"><span class="n">5</span>教研活动空间</button>
+      <button class="ftab" data-fp="6" role="tab"><span class="n">6</span>AI 数字人交互</button>
+    </div>
+
+    <div class="feat-panel on rv" data-fp="1">
+      <div>
+        <p class="para" style="margin-top:0">各学科教师都可以在这里开展沉浸式教学。语文课上，三面墙呈现古诗的意境，学生仿佛走进了诗里；科学课上，学生「潜入」深海，近距离观察海洋生物；历史课上，学生「穿越」到古代，亲历历史场景……</p>
+        <p class="para">教师通过平板控制教学进度，可以随时暂停、回放、切换视角，引导学生观察和思考。</p>
+        <div class="feat-sub"><span>各学科沉浸式授课</span><span>跨学科主题学习</span><span>专题讲座分享</span></div>
+      </div>
+      <div class="feat-imgs two">
+        <div class="figure"><img src="images/solar-terms.jpg" alt="沉浸式授课场景案例——二十四节气" loading="lazy"></div>
+        <div class="figure"><img src="images/teacher-guide.jpg" alt="沉浸式授课场景——教师引导，学生身临其境感受学习内容" loading="lazy"></div>
+      </div>
+    </div>
+
+    <div class="feat-panel rv" data-fp="2">
+      <div>
+        <p class="para" style="margin-top:0">学生不再只是「看」，更可以「做」。通过墙面触控、体感互动，学生可以动手操作——在人体漫游中点击各个器官了解功能，在森林里收集叶子做拓印，在古街里寻找汉字的起源……</p>
+        <p class="para">支持单人探索、双人 PK、小组协作等多种互动形式，让学习变成一场有趣的探险。</p>
+        <div class="feat-sub"><span>科学探究体验</span><span>文化沉浸体验</span><span>创意创作实践</span></div>
+      </div>
+      <div class="feat-imgs"><div class="figure"><img src="images/interactive.jpg" alt="互动体验场景——学生通过触控、体感等方式与内容互动" loading="lazy"></div></div>
+    </div>
+
+    <div class="feat-panel rv" data-fp="3">
+      <div>
+        <p class="para" style="margin-top:0">空间的三面墙本身就是一个巨大的数字展墙。学生的绘画作品、手工作品、研究报告、创意项目……都可以在这里进行沉浸式展示。</p>
+        <p class="para">展示不是静态的——学生作品可以通过扫描设备或终端快速上传，以沉浸式的方式陈列展示，作品可以铺满整面墙。可以放大看细节，可以左右滑动浏览，可以点击查看创作说明，还可以互动投票和评价。一次班级作品展，就是一场属于孩子们的「沉浸式个展」，让每一份努力都被看见，让每一个声音都被听见。</p>
+        <div class="feat-sub"><span>学生数字作品展</span><span>学习成果汇报</span><span>互动式评价</span></div>
+      </div>
+      <div class="feat-imgs">
+        <div class="figure"><img src="images/gallery-main.jpg" alt="数字作品展示效果——互动式展墙，支持作品上传、详情查看、展示播放" loading="lazy"></div>
+        <div class="feat-imgs two">
+          <div class="figure"><img src="images/gallery-a.jpg" alt="学生作品沉浸式展墙效果一" loading="lazy"></div>
+          <div class="figure"><img src="images/gallery-b.jpg" alt="学生作品沉浸式展墙效果二" loading="lazy"></div>
         </div>
-        <div class="hero-content">
-            <div class="hero-subtitle">
-                <span class="line"></span>
-                <span>沉浸式数智学习空间</span>
-                <span class="line"></span>
-            </div>
-            <h1 class="hero-title">
-                在沉浸中<br>
-                <span class="title-highlight">「做中学」</span>
-            </h1>
-            <p class="hero-desc">
-                把"课本里的世界"变成"学生可以走进去的世界"<br>
-                让学习从"听别人讲"变成"自己亲身经历"
-            </p>
-            <div class="hero-actions">
-                <a href="#overview" class="btn btn-primary">了解方案</a>
-                <a href="#scenarios" class="btn btn-secondary">查看场景</a>
-            </div>
+      </div>
+    </div>
+
+    <div class="feat-panel rv" data-fp="4">
+      <div>
+        <p class="para" style="margin-top:0">空间不只是用来「看」和「体验」的，更是用来「创造」的。AI 创作工坊让学生从「内容的消费者」变成「内容的创作者」——用 AI 工具释放想象力，把创意变成作品。</p>
+        <p class="para">学生可以用 AI 绘画工具把自己的想法变成画面，用 AI 绘本工具把故事变成绘本，用 AI 音乐工具把旋律变成乐曲……创作过程本身就是最好的学习：在尝试、调整、迭代中，理解 AI 的能力边界，培养创意表达和审辩思维。</p>
+        <div class="callout co-pink" style="margin:14px 0 0">
+          <div class="co-t"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="8.5" cy="10" r="1.2" fill="currentColor"/><circle cx="15.5" cy="10" r="1.2" fill="currentColor"/><path d="M8 15c1 1 2.5 1.6 4 1.6s3-.6 4-1.6"/></svg>教育价值</div>
+          <p>AI 不是用来「代替」学生创作的，而是用来「赋能」学生创作的。当技术降低了表达的门槛，学生可以更专注于创意本身——想表达什么、为什么这样表达、怎样表达得更好。</p>
         </div>
-        <div class="hero-scroll">
-            <div class="scroll-indicator"></div>
-            <span>向下探索</span>
+        <div class="feat-sub" style="margin-top:14px"><span>AI 绘画创作</span><span>AI 绘本生成</span><span>AIGC 创意工坊</span></div>
+      </div>
+    </div>
+
+    <div class="feat-panel rv" data-fp="5">
+      <div>
+        <p class="para" style="margin-top:0">空间也服务于教师专业发展。在这里可以开展沉浸式教研活动——观摩示范课、研讨跨学科教学设计、培训沉浸式教学方法、集体开发课程资源……</p>
+        <p class="para"><strong>教师先「体验」沉浸式学习，才能更好地带领学生「沉浸」。</strong></p>
+        <div class="feat-sub"><span>教师教研培训</span><span>教学观摩研讨</span><span>课程开发工作坊</span></div>
+      </div>
+    </div>
+
+    <div class="feat-panel rv" data-fp="6">
+      <div>
+        <p class="para" style="margin-top:0">空间入口处的大屏上，学校专属 IP 数字人是师生进入空间遇到的「第一个人」。它不只是迎宾员，更是<strong>校园智慧大脑的可视化界面</strong>——主动迎宾、语音导览、自由问答，向师生展示这所学校的 AI「懂什么、会什么、靠什么」。</p>
+        <p class="para">数据类问题实时调取校园物联网数据作答，技能类问题调用 AI 能力现场演示，基础类问题展示 AI 的知识底座和技术原理。数字人本身就是一本<strong>活的 AI 教材</strong>，让学生在对话中认识 AI、理解数据、培养信息素养。</p>
+        <div class="feat-sub"><span>智能迎宾导览</span><span>校园数据问答</span><span>AI 技能演示</span></div>
+      </div>
+      <div class="feat-imgs"><div class="figure"><img src="images/digital-human.jpg" alt="AI教育智慧大脑数据驾驶舱——学校专属IP数字人" loading="lazy"></div></div>
+    </div>
+  </div>
+
+  <!-- 空间布局设计 -->
+  <div style="margin-top:52px">
+    <h3 class="h3-title rv"><span class="ico" style="background:var(--amber)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 9v12"/></svg></span>空间布局设计</h3>
+    <div class="form-grid" style="margin-top:6px">
+      <div class="rv">
+        <div class="figure"><img src="images/layout-zone.jpg" alt="空间功能分区参考——灵活布局，多功能复合使用" loading="lazy"></div>
+        <p class="fig-cap">空间功能分区参考——灵活布局，多功能复合使用</p>
+        <div class="figure" style="margin-top:14px"><img src="images/layout-plan.jpg" alt="空间布局设计平面参考" loading="lazy"></div>
+      </div>
+      <div class="design-list rv">
+        <div class="dl-item"><div class="k"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/></svg>无遮挡开阔空间</div><div class="v">中央区域无立柱和遮挡，确保所有学生都有良好的视线，也便于学生走动和互动</div></div>
+        <div class="dl-item"><div class="k"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="6" height="13" rx="2"/><rect x="15" y="8" width="6" height="13" rx="2"/><path d="M9 12h6"/></svg>模块化灵活座椅</div><div class="v">彩色方凳/长凳，可根据教学需要灵活排列——全班授课时整齐排列，小组讨论时围圈摆放，体验活动时移到边上</div></div>
+        <div class="dl-item"><div class="k"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M4 12h16"/></svg>深色天花 + 哑光墙面</div><div class="v">减少光线反射，提升投影画质，让沉浸感更强</div></div>
+        <div class="dl-item"><div class="k"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4"/></svg>可调光照明系统</div><div class="v">支持多种场景模式——授课模式（稍亮）、体验模式（较暗）、展示模式（氛围光）、整理模式（全亮）</div></div>
+        <div class="dl-item"><div class="k"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4M8 6v12M12 9v6M16 4v16M20 8v8"/></svg>声学处理</div><div class="v">适当吸音处理，确保音响清晰，也便于小组讨论时互不干扰</div></div>
+        <div class="dl-item"><div class="k"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="3"/><path d="M9 18h6"/></svg>教师中控平板</div><div class="v">教师手持平板即可控制所有设备和内容，走动式教学，不必被讲台束缚</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ================= 三、教学应用场景 ================= -->
+<section class="section" id="scenarios">
+  <div class="sec-head rv">
+    <span class="sec-chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h13l-3 4 3 4H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h13"/></svg>教学应用场景示例</span>
+    <h2>十个场景，看见空间的生命力</h2>
+    <svg class="wave" width="150" height="10" viewBox="0 0 150 10" aria-hidden="true"><path d="M2 6 Q 12 1, 22 6 T 42 6 T 62 6 T 82 6 T 102 6 T 122 6 T 142 6" fill="none" stroke="#7C6CF0" stroke-width="3.5" stroke-linecap="round"/></svg>
+    <p class="lead">空间的生命力在于应用。以下是各学科的典型应用场景示例，展示不同学科的老师如何在这个空间里开展教学。</p>
+  </div>
+
+  <div class="filter-bar rv" id="filterBar">
+    <button class="fbtn on" data-filter="all">全部场景</button>
+    <button class="fbtn" data-filter="chinese">语文</button>
+    <button class="fbtn" data-filter="science">科学</button>
+    <button class="fbtn" data-filter="history">历史·传统文化</button>
+    <button class="fbtn" data-filter="art">美育·艺术</button>
+    <button class="fbtn" data-filter="cross">跨学科</button>
+    <button class="fbtn" data-filter="ai">AI 数字人</button>
+  </div>
+
+  <div class="scen-grid" id="scenGrid">
+
+    <!-- 场景一 -->
+    <article class="scen t-chinese rv" data-cat="chinese">
+      <div class="scen-img"><img src="images/poem-class.jpg" alt="古诗意境沉浸课——三面墙呈现古诗意境" loading="lazy"><span class="scen-no">场景一</span><span class="scen-subj">语文学科</span></div>
+      <div class="scen-body">
+        <h3>古诗意境沉浸课</h3>
+        <span class="scen-fit">适用内容：小学古诗教学（如《小池》《望庐山瀑布》《江南春》等）</span>
+        <div class="steps">
+          <div class="step"><span class="sn">1</span><div class="st"><b>入境</b><span class="mins" style="color:var(--coral)">3 分钟</span><p>三面墙缓缓呈现古诗的意境——泉水、细流、树荫、小荷、蜻蜓……学生仿佛站在池塘边。老师诵读诗句，画面随诗句变化。</p></div></div>
+          <div class="step"><span class="sn">2</span><div class="st"><b>品读</b><span class="mins" style="color:var(--coral)">10 分钟</span><p>老师引导学生观察画面中的景物，对照诗句理解词义。点击画面中的景物，会出现对应的诗句和解释。</p></div></div>
+          <div class="step"><span class="sn">3</span><div class="st"><b>体验</b><span class="mins" style="color:var(--coral)">10 分钟</span><p>学生可以「走进」画面——拖拽蜻蜓到荷叶上，拨动水面泛起涟漪，感受诗中的动态美。</p></div></div>
+          <div class="step"><span class="sn">4</span><div class="st"><b>表达</b><span class="mins" style="color:var(--coral)">7 分钟</span><p>学生用自己的话描述诗中的画面，或者尝试仿写诗句。</p></div></div>
         </div>
-    </section>
-
-    <!-- 项目概述 -->
-    <section class="section" id="overview">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-num">01</span>
-                <h2 class="section-title">项目概述</h2>
-                <p class="section-subtitle">Project Overview</p>
-            </div>
-
-            <div class="overview-grid">
-                <div class="overview-card bg-card">
-                    <div class="card-icon">📚</div>
-                    <h3>项目背景</h3>
-                    <p>新一轮课程改革强调"核心素养导向"，要求打破学科壁垒，推进跨学科综合学习。《义务教育课程方案（2022年版）》明确提出"设立跨学科主题学习活动，加强学科间相互关联，带动课程综合化实施，强化实践性要求"。</p>
-                    <p>然而，传统教室的物理空间形态——讲台、黑板、整齐排列的课桌椅——本质上是为"教师讲授、学生听讲"的单向知识传递设计的，难以承载体验式、探究式、项目式的新型学习方式。</p>
-                </div>
-
-                <div class="overview-card highlight-card">
-                    <div class="card-icon">💡</div>
-                    <h3>我们的思考</h3>
-                    <p class="highlight-text">
-                        如果知识是立体的、关联的、鲜活的，<br>
-                        为什么学习空间只能是平面的、孤立的、静态的？
-                    </p>
-                    <p>跨学科沉浸式学习空间，就是要把"课本里的世界"变成"学生可以走进去的世界"，让学习从"听别人讲"变成"自己亲身经历"。</p>
-                </div>
-            </div>
-
-            <!-- 教育理念 -->
-            <div class="philosophy-section">
-                <h3 class="philosophy-title">教育理念</h3>
-                <p class="philosophy-desc">本空间以<strong>体验式学习理论</strong>（Experiential Learning）为核心教育学基础，借鉴建构主义学习观，重构"教"与"学"的关系。</p>
-
-                <div class="learning-cycle">
-                    <h4>体验式学习循环</h4>
-                    <div class="cycle-diagram">
-                        <div class="cycle-item cycle-1">
-                            <div class="cycle-num">01</div>
-                            <div class="cycle-content">
-                                <h5>具体体验</h5>
-                                <p>Concrete Experience</p>
-                            </div>
-                        </div>
-                        <div class="cycle-arrow">→</div>
-                        <div class="cycle-item cycle-2">
-                            <div class="cycle-num">02</div>
-                            <div class="cycle-content">
-                                <h5>观察反思</h5>
-                                <p>Observation Reflection</p>
-                            </div>
-                        </div>
-                        <div class="cycle-arrow">→</div>
-                        <div class="cycle-item cycle-3">
-                            <div class="cycle-num">03</div>
-                            <div class="cycle-content">
-                                <h5>抽象概念</h5>
-                                <p>Abstract Conceptualization</p>
-                            </div>
-                        </div>
-                        <div class="cycle-arrow">→</div>
-                        <div class="cycle-item cycle-4">
-                            <div class="cycle-num">04</div>
-                            <div class="cycle-content">
-                                <h5>主动检验</h5>
-                                <p>Active Experimentation</p>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="cycle-note">
-                        沉浸式空间的价值，就在于为学习循环的<strong>第一环——"具体体验"</strong>提供了前所未有的可能性：
-                        学生不再是通过文字和图片"间接"了解知识，而是身临其境"直接"感受知识产生的情境。
-                    </p>
-                </div>
-
-                <div class="constructivism">
-                    <h4>建构主义学习环境四要素</h4>
-                    <div class="construct-grid">
-                        <div class="construct-item">
-                            <div class="construct-icon">🎬</div>
-                            <h5>情境</h5>
-                            <p>高度仿真的虚拟学习情境，知识在真实场景中呈现</p>
-                        </div>
-                        <div class="construct-item">
-                            <div class="construct-icon">🤝</div>
-                            <h5>协作</h5>
-                            <p>多人集体互动、分组协作，共同完成学习任务</p>
-                        </div>
-                        <div class="construct-item">
-                            <div class="construct-icon">💬</div>
-                            <h5>会话</h5>
-                            <p>空间支持小组讨论、全班分享，在交流中建构意义</p>
-                        </div>
-                        <div class="construct-item">
-                            <div class="construct-icon">🧠</div>
-                            <h5>意义建构</h5>
-                            <p>通过亲身参与和互动，主动完成知识的建构</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 空间定位 -->
-            <div class="positioning-card">
-                <div class="positioning-icon">✨</div>
-                <h3>空间定位</h3>
-                <p>
-                    <strong>跨学科沉浸式学习空间</strong>是一个以"沉浸式投影+互动触控+AI赋能"为技术底座，
-                    以"体验式学习+跨学科融合"为教育理念的新型教学空间。
-                </p>
-                <p>
-                    它不是某一个学科的专用教室，而是<strong>全校各学科都可以使用的共享教学空间</strong>——
-                    语文老师可以带学生走进古诗的意境，科学老师可以带学生潜入深海，
-                    历史老师可以带学生穿越到古代，美术老师可以带学生徜徉在名画之中……
-                </p>
-            </div>
-
-            <!-- 空间价值对比 -->
-            <div class="value-comparison">
-                <h3 class="comparison-title">空间价值</h3>
-                <div class="comparison-table">
-                    <div class="comp-row comp-header">
-                        <div class="comp-cell">维度</div>
-                        <div class="comp-cell comp-traditional">传统教室</div>
-                        <div class="comp-cell comp-immersive">沉浸式学习空间</div>
-                    </div>
-                    <div class="comp-row">
-                        <div class="comp-cell">学习方式</div>
-                        <div class="comp-cell comp-traditional">听讲式、被动接受</div>
-                        <div class="comp-cell comp-immersive">体验式、主动探究</div>
-                    </div>
-                    <div class="comp-row">
-                        <div class="comp-cell">知识呈现</div>
-                        <div class="comp-cell comp-traditional">平面的、抽象的文字和图片</div>
-                        <div class="comp-cell comp-immersive">立体的、具象的情境和体验</div>
-                    </div>
-                    <div class="comp-row">
-                        <div class="comp-cell">学科边界</div>
-                        <div class="comp-cell comp-traditional">单科孤立教学</div>
-                        <div class="comp-cell comp-immersive">跨学科融合学习</div>
-                    </div>
-                    <div class="comp-row">
-                        <div class="comp-cell">学生角色</div>
-                        <div class="comp-cell comp-traditional">听众、观众</div>
-                        <div class="comp-cell comp-immersive">参与者、探索者、创造者</div>
-                    </div>
-                    <div class="comp-row">
-                        <div class="comp-cell">教师角色</div>
-                        <div class="comp-cell comp-traditional">知识传授者</div>
-                        <div class="comp-cell comp-immersive">学习引导者、情境创设者</div>
-                    </div>
-                    <div class="comp-row">
-                        <div class="comp-cell">作品展示</div>
-                        <div class="comp-cell comp-traditional">教室墙面、走廊展示</div>
-                        <div class="comp-cell comp-immersive">沉浸式数字展墙，互动式呈现</div>
-                    </div>
-                    <div class="comp-row">
-                        <div class="comp-cell">空间形态</div>
-                        <div class="comp-cell comp-traditional">固定的、单一功能的</div>
-                        <div class="comp-cell comp-immersive">可变的、多功能复合的</div>
-                    </div>
-                </div>
-            </div>
+        <div class="callout co-coral">
+          <div class="co-t"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h13l-3 4 3 4H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h13"/></svg>教育价值</div>
+          <p>古诗教学的难点在于「意境」——学生很难通过文字想象出诗中的画面。沉浸式空间让学生「走进」诗里，用眼睛看、用身体感受，真正理解什么是「诗中有画，画中有诗」。</p>
         </div>
-    </section>
+      </div>
+    </article>
 
-    <!-- 空间设计 -->
-    <section class="section section-dark" id="design">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-num">02</span>
-                <h2 class="section-title">空间设计与功能布局</h2>
-                <p class="section-subtitle">Space Design & Layout</p>
-            </div>
+    <!-- 场景二 -->
+    <article class="scen t-chinese rv" data-cat="chinese">
+      <div class="scen-img"><img src="images/hanzi-a.jpg" alt="汉字起源探秘——古街商铺与象形字招牌" loading="lazy"><span class="scen-no">场景二</span><span class="scen-subj">语文学科</span></div>
+      <div class="scen-body">
+        <h3>汉字起源探秘</h3>
+        <span class="scen-fit">适用内容：汉字识字教学、汉字文化启蒙</span>
+        <p>学生「走进」一条古色古香的街道，两旁是各种商铺——米店、水井、弓箭铺、马车坊……每个商铺的招牌上都有对应的象形字。学生点击商铺，就能看到这个字从甲骨文到金文、小篆、楷书的演变过程，还可以动手「写一写」。</p>
+        <div class="scen-imgs2"><div class="figure"><img src="images/hanzi-b.jpg" alt="汉字从甲骨文到楷书的演变演示" loading="lazy"></div></div>
+      </div>
+    </article>
 
-            <!-- 空间形态 -->
-            <div class="space-morphology">
-                <div class="morphology-text">
-                    <h3>空间形态</h3>
-                    <p>采用<strong>270° U型三面墙沉浸式投影</strong>设计，左墙、正墙、右墙三面环绕投影，形成被画面包裹的沉浸感。学生站在空间中央，仿佛置身于另一个世界。</p>
-                    <p>可依据校园空间大小进行选择硬件标准，并设计屏幕的开角程度，使产品最大效度的利用空间。</p>
-                </div>
-                <div class="morphology-image">
-                    <img src="images/档案馆_沉浸式空间全景.jpg" alt="270° U型三面墙沉浸式投影效果">
-                    <div class="image-caption">270° U型三面墙投影效果——左墙、正墙、右墙形成环绕式沉浸体验</div>
-                </div>
-            </div>
-
-            <!-- 空间参数 -->
-            <div class="specs-grid">
-                <div class="spec-item">
-                    <div class="spec-value">50-70<span>㎡</span></div>
-                    <div class="spec-label">推荐面积</div>
-                    <div class="spec-desc">可容纳一个班级（25-30人）同时开展学习活动</div>
-                </div>
-                <div class="spec-item">
-                    <div class="spec-value">270°<span>U型</span></div>
-                    <div class="spec-label">投影形式</div>
-                    <div class="spec-desc">左墙+正墙+右墙，画面连续无缝融合</div>
-                </div>
-                <div class="spec-item">
-                    <div class="spec-value">7680×1200<span>px</span></div>
-                    <div class="spec-label">总分辨率</div>
-                    <div class="spec-desc">超宽画幅，细腻清晰</div>
-                </div>
-                <div class="spec-item">
-                    <div class="spec-value">3<span>种</span></div>
-                    <div class="spec-label">互动方式</div>
-                    <div class="spec-desc">触控+体感+语音多种交互方式</div>
-                </div>
-            </div>
+    <!-- 场景三 -->
+    <article class="scen t-science rv" data-cat="science">
+      <div class="scen-img"><img src="images/ocean-explore.jpg" alt="深海奇遇——沉浸式探索学习，学生在情境中主动探索" loading="lazy"><span class="scen-no">场景三</span><span class="scen-subj">科学学科</span></div>
+      <div class="scen-body">
+        <h3>深海奇遇</h3>
+        <span class="scen-fit">适用内容：海洋生物、生态系统</span>
+        <div class="steps">
+          <div class="step"><span class="sn">1</span><div class="st"><b>潜入</b><span class="mins" style="color:var(--teal)">3 分钟</span><p>三面墙从海面缓缓下潜，光线逐渐变暗，周围出现各种海洋生物——小鱼群从身边游过，海龟慢悠悠地划过，鲸鱼的歌声在空间中回响。学生仿佛真的潜入了深海。</p></div></div>
+          <div class="step"><span class="sn">2</span><div class="st"><b>探索</b><span class="mins" style="color:var(--teal)">12 分钟</span><p>学生可以「游」到不同的海洋生物身边，点击查看它们的名称、习性、特点。从浅海的珊瑚礁到深海的热泉口，不同深度有不同的生态系统，每一种生物都有自己的故事。</p></div></div>
+          <div class="step"><span class="sn">3</span><div class="st"><b>互动</b><span class="mins" style="color:var(--teal)">8 分钟</span><p>学生可以参与互动任务——帮助小丑鱼找到海葵家园，观察鲸鱼的迁徙路线，数一数珊瑚礁上有多少种生物……在游戏中学习海洋知识。</p></div></div>
+          <div class="step"><span class="sn">4</span><div class="st"><b>分享</b><span class="mins" style="color:var(--teal)">5 分钟</span><p>学生分享自己印象最深的海洋生物，以及为什么海洋生态很重要，讨论我们能为保护海洋做什么。</p></div></div>
         </div>
-    </section>
-
-    <!-- 六大核心功能 -->
-    <section class="section" id="features">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-num">03</span>
-                <h2 class="section-title">六大核心功能</h2>
-                <p class="section-subtitle">Six Core Functions</p>
-            </div>
-
-            <p class="features-intro">
-                这个空间不是单一功能的教室，而是一个<strong>多功能复合学习空间</strong>，
-                集授课、体验、创作、展示、教研、智能交互于一体，可以承担六大核心功能。
-            </p>
-
-            <div class="features-grid">
-                <div class="feature-card" data-feature="1">
-                    <div class="feature-num">01</div>
-                    <div class="feature-icon">🎓</div>
-                    <h3>沉浸式授课空间</h3>
-                    <p>各学科教师都可以在这里开展沉浸式教学。语文课上，三面墙呈现古诗的意境；科学课上，学生"潜入"深海；历史课上，学生"穿越"到古代……</p>
-                    <ul>
-                        <li>各学科沉浸式授课</li>
-                        <li>跨学科主题学习</li>
-                        <li>专题讲座分享</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card" data-feature="2">
-                    <div class="feature-num">02</div>
-                    <div class="feature-icon">🔬</div>
-                    <h3>互动体验工坊</h3>
-                    <p>学生不再只是"看"，更可以"做"。通过墙面触控、体感互动，学生可以动手操作——在人体漫游中点击各个器官，在森林里收集叶子做拓印……</p>
-                    <ul>
-                        <li>科学探究体验</li>
-                        <li>文化沉浸体验</li>
-                        <li>创意创作实践</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card" data-feature="3">
-                    <div class="feature-num">03</div>
-                    <div class="feature-icon">🖼️</div>
-                    <h3>数字作品展示空间</h3>
-                    <p>空间的三面墙本身就是一个巨大的数字展墙。学生的绘画、手工作品、项目成果等，都可以通过扫描设备或终端快速上传，以沉浸式的方式陈列展示。</p>
-                    <ul>
-                        <li>学生数字作品展</li>
-                        <li>学习成果汇报</li>
-                        <li>互动式评价</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card" data-feature="4">
-                    <div class="feature-num">04</div>
-                    <div class="feature-icon">🎨</div>
-                    <h3>AI 创作工坊</h3>
-                    <p>空间不只是用来"看"和"体验"的，更是用来"创造"的。AI创作工坊让学生从"内容的消费者"变成"内容的创作者"——用AI工具释放想象力。</p>
-                    <ul>
-                        <li>AI绘画创作</li>
-                        <li>AI绘本生成</li>
-                        <li>AIGC创意工坊</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card" data-feature="5">
-                    <div class="feature-num">05</div>
-                    <div class="feature-icon">👩‍🏫</div>
-                    <h3>教研活动空间</h3>
-                    <p>空间也服务于教师专业发展。在这里可以开展沉浸式教研活动——观摩示范课、研讨跨学科教学设计、培训沉浸式教学方法……</p>
-                    <ul>
-                        <li>教师教研培训</li>
-                        <li>教学观摩研讨</li>
-                        <li>课程开发工作坊</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card" data-feature="6">
-                    <div class="feature-num">06</div>
-                    <div class="feature-icon">🤖</div>
-                    <h3>AI 数字人交互</h3>
-                    <p>空间入口处的大屏上，学校专属IP数字人是师生进入空间遇到的"第一个人"。它不只是迎宾员，更是校园智慧大脑的可视化界面。</p>
-                    <ul>
-                        <li>智能迎宾导览</li>
-                        <li>校园数据问答</li>
-                        <li>AI技能演示</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 空间布局设计 -->
-            <div class="layout-section">
-                <h3 class="layout-title">空间布局设计</h3>
-                <div class="layout-content">
-                    <div class="layout-image">
-                        <img src="images/上师大_功能分区图.png" alt="空间功能分区参考图">
-                        <div class="image-caption">空间功能分区参考——灵活布局，多功能复合使用</div>
-                    </div>
-                    <div class="design-elements">
-                        <h4>设计要素与教育考量</h4>
-                        <div class="element-list">
-                            <div class="element-item">
-                                <div class="element-icon">🏛️</div>
-                                <div>
-                                    <h5>无遮挡开阔空间</h5>
-                                    <p>中央区域无立柱和遮挡，确保所有学生都有良好的视线，也便于学生走动和互动</p>
-                                </div>
-                            </div>
-                            <div class="element-item">
-                                <div class="element-icon">🪑</div>
-                                <div>
-                                    <h5>模块化灵活座椅</h5>
-                                    <p>彩色方凳/长凳，可根据教学需要灵活排列——全班授课时整齐排列，小组讨论时围圈摆放</p>
-                                </div>
-                            </div>
-                            <div class="element-item">
-                                <div class="element-icon">🎨</div>
-                                <div>
-                                    <h5>深色天花+哑光墙面</h5>
-                                    <p>减少光线反射，提升投影画质，让沉浸感更强</p>
-                                </div>
-                            </div>
-                            <div class="element-item">
-                                <div class="element-icon">💡</div>
-                                <div>
-                                    <h5>可调光照明系统</h5>
-                                    <p>支持多种场景模式——授课模式、体验模式、展示模式、整理模式</p>
-                                </div>
-                            </div>
-                            <div class="element-item">
-                                <div class="element-icon">🔊</div>
-                                <div>
-                                    <h5>声学处理</h5>
-                                    <p>适当吸音处理，确保音响清晰，也便于小组讨论时互不干扰</p>
-                                </div>
-                            </div>
-                            <div class="element-item">
-                                <div class="element-icon">📱</div>
-                                <div>
-                                    <h5>教师中控平板</h5>
-                                    <p>教师手持平板即可控制所有设备和内容，走动式教学，不必被讲台束缚</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="callout co-teal">
+          <div class="co-t"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 17c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><ellipse cx="15" cy="7" rx="5" ry="3.4"/></svg>教育价值</div>
+          <p>海洋对学生来说既熟悉又陌生——他们在书上见过图片，但很难真正想象深海是什么样子。沉浸式空间让学生「潜」入海底，亲眼看见、亲身体验，对海洋生物和生态系统的理解自然就深刻了。更重要的是，在探索中培养对自然的敬畏之心和环保意识。</p>
         </div>
-    </section>
+      </div>
+    </article>
 
-    <!-- 教学应用场景 -->
-    <section class="section section-dark" id="scenarios">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-num">04</span>
-                <h2 class="section-title">教学应用场景</h2>
-                <p class="section-subtitle">Teaching Scenarios</p>
-            </div>
+    <!-- 场景四 -->
+    <article class="scen t-science rv" data-cat="science">
+      <div class="scen-img"><img src="images/body-quest.jpg" alt="人体探秘——逐层深入查看3D器官结构" loading="lazy"><span class="scen-no">场景四</span><span class="scen-subj">科学学科</span></div>
+      <div class="scen-body">
+        <h3>人体探秘</h3>
+        <span class="scen-fit">适用内容：人体生理、健康知识</span>
+        <p>学生可以点击选择人体不同部位，逐层深入查看对应的 3D 器官结构和功能介绍，从皮肤到肌肉、从骨骼到内脏，像拆解一个立体拼图一样认识自己的身体。</p>
+      </div>
+    </article>
 
-            <p class="scenarios-intro">
-                空间的生命力在于应用。以下是各学科的典型应用场景示例，展示不同学科的老师如何在这个空间里开展教学。
-            </p>
-
-            <!-- 场景分类标签 -->
-            <div class="scenario-tabs">
-                <button class="tab-btn active" data-tab="chinese">语文学科</button>
-                <button class="tab-btn" data-tab="science">科学学科</button>
-                <button class="tab-btn" data-tab="history">历史与传统文化</button>
-                <button class="tab-btn" data-tab="art">美育与艺术</button>
-                <button class="tab-btn" data-tab="interdisciplinary">跨学科主题</button>
-                <button class="tab-btn" data-tab="ai">AI数字人</button>
-            </div>
-
-            <!-- 语文学科 -->
-            <div class="scenario-panel active" id="chinese">
-                <div class="scenario-card large">
-                    <div class="scenario-image">
-                        <img src="images/实景_沉浸式教室雨林场景.jpg" alt="古诗意境沉浸课">
-                    </div>
-                    <div class="scenario-content">
-                        <span class="scenario-tag">场景一</span>
-                        <h3>古诗意境沉浸课</h3>
-                        <p class="scenario-apply"><strong>适用内容：</strong>小学古诗教学（如《小池》《望庐山瀑布》《江南春》等）</p>
-                        <div class="scenario-process">
-                            <h4>教学过程</h4>
-                            <div class="process-steps">
-                                <div class="step">
-                                    <span class="step-num">1</span>
-                                    <div>
-                                        <h5>入境（3分钟）</h5>
-                                        <p>三面墙缓缓呈现古诗的意境——泉水、细流、树荫、小荷、蜻蜓……学生仿佛站在池塘边。</p>
-                                    </div>
-                                </div>
-                                <div class="step">
-                                    <span class="step-num">2</span>
-                                    <div>
-                                        <h5>品读（10分钟）</h5>
-                                        <p>老师引导学生观察画面中的景物，对照诗句理解词义。点击画面中的景物，会出现对应的诗句和解释。</p>
-                                    </div>
-                                </div>
-                                <div class="step">
-                                    <span class="step-num">3</span>
-                                    <div>
-                                        <h5>体验（10分钟）</h5>
-                                        <p>学生可以"走进"画面——拖拽蜻蜓到荷叶上，拨动水面泛起涟漪，感受诗中的动态美。</p>
-                                    </div>
-                                </div>
-                                <div class="step">
-                                    <span class="step-num">4</span>
-                                    <div>
-                                        <h5>表达（7分钟）</h5>
-                                        <p>学生用自己的话描述诗中的画面，或者尝试仿写诗句。</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="scenario-value">
-                            <span class="value-icon">📖</span>
-                            <p><strong>教育价值：</strong>古诗教学的难点在于"意境"——学生很难通过文字想象出诗中的画面。沉浸式空间让学生"走进"诗里，用眼睛看、用身体感受，真正理解什么是"诗中有画，画中有诗"。</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="scenario-card">
-                    <div class="scenario-image">
-                        <img src="images/档案馆_互动体验场景.jpg" alt="汉字起源探秘">
-                    </div>
-                    <div class="scenario-content">
-                        <span class="scenario-tag">场景二</span>
-                        <h3>汉字起源探秘</h3>
-                        <p class="scenario-apply"><strong>适用内容：</strong>汉字识字教学、汉字文化启蒙</p>
-                        <p>学生"走进"一条古色古香的街道，两旁是各种商铺——米店、水井、弓箭铺、马车坊……每个商铺的招牌上都有对应的象形字。学生点击商铺，就能看到这个字从甲骨文到金文、小篆、楷书的演变过程，还可以动手"写一写"。</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 科学学科 -->
-            <div class="scenario-panel" id="science">
-                <div class="scenario-card large">
-                    <div class="scenario-image">
-                        <img src="images/实景_跨学科英语教室.jpg" alt="深海奇遇">
-                    </div>
-                    <div class="scenario-content">
-                        <span class="scenario-tag">场景三</span>
-                        <h3>深海奇遇</h3>
-                        <p class="scenario-apply"><strong>适用内容：</strong>海洋生物、生态系统</p>
-                        <div class="scenario-process">
-                            <h4>教学过程</h4>
-                            <div class="process-steps">
-                                <div class="step">
-                                    <span class="step-num">1</span>
-                                    <div>
-                                        <h5>潜入（3分钟）</h5>
-                                        <p>三面墙从海面缓缓下潜，光线逐渐变暗，周围出现各种海洋生物——小鱼群从身边游过，海龟慢悠悠地划过。</p>
-                                    </div>
-                                </div>
-                                <div class="step">
-                                    <span class="step-num">2</span>
-                                    <div>
-                                        <h5>探索（12分钟）</h5>
-                                        <p>学生可以"游"到不同的海洋生物身边，点击查看它们的名称、习性、特点。从浅海的珊瑚礁到深海的热泉口。</p>
-                                    </div>
-                                </div>
-                                <div class="step">
-                                    <span class="step-num">3</span>
-                                    <div>
-                                        <h5>互动（8分钟）</h5>
-                                        <p>学生可以参与互动任务——帮助小丑鱼找到海葵家园，观察鲸鱼的迁徙路线，数一数珊瑚礁上有多少种生物。</p>
-                                    </div>
-                                </div>
-                                <div class="step">
-                                    <span class="step-num">4</span>
-                                    <div>
-                                        <h5>分享（5分钟）</h5>
-                                        <p>学生分享自己印象最深的海洋生物，讨论我们能为保护海洋做什么。</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="scenario-value">
-                            <span class="value-icon">🐠</span>
-                            <p><strong>教育价值：</strong>海洋对学生来说既熟悉又陌生。沉浸式空间让学生"潜"入海底，亲眼看见、亲身体验，对海洋生物和生态系统的理解自然就深刻了。</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="scenario-card">
-                    <div class="scenario-image">
-                        <img src="images/档案馆_数字互动展项.jpg" alt="人体探秘">
-                    </div>
-                    <div class="scenario-content">
-                        <span class="scenario-tag">场景四</span>
-                        <h3>人体探秘</h3>
-                        <p class="scenario-apply"><strong>适用内容：</strong>人体生理、健康知识</p>
-                        <p>学生可以点击选择人体不同部位，逐层深入查看对应的3D器官结构和功能介绍，从皮肤到肌肉、从骨骼到内脏，像拆解一个立体拼图一样认识自己的身体。</p>
-                    </div>
-                </div>
-
-                <div class="scenario-card">
-                    <div class="scenario-image">
-                        <img src="images/档案馆_互动装置.jpg" alt="AI历史长廊">
-                    </div>
-                    <div class="scenario-content">
-                        <span class="scenario-tag">场景五</span>
-                        <h3>AI 历史长廊</h3>
-                        <p class="scenario-apply"><strong>学科结合：</strong>信息科技 + 历史 + 科学</p>
-                        <p>三块触摸屏拼接成贯通的时间长卷，左右滑动即可浏览AI从诞生至今的完整历程。从达特茅斯会议的诞生，到专家系统的兴衰，从深度学习的突破，到大模型时代的到来。</p>
-                        <ul class="feature-list">
-                            <li><strong>长卷式时间轴</strong>：三屏拼接成贯通的时间长河，左右滑动浏览AI完整历程</li>
-                            <li><strong>里程碑点选</strong>：点击关键节点，弹出人物故事、技术原理、时代影响的详情卡片</li>
-                            <li><strong>跨屏分阶段</strong>：三屏分别呈现"起源→发展→大模型时代"三个阶段</li>
-                            <li><strong>AI语音讲解</strong>：每个里程碑都配有AI语音讲解，讲述背后的故事与意义</li>
-                        </ul>
-                        <div class="scenario-value">
-                            <span class="value-icon">🤖</span>
-                            <p><strong>教育价值：</strong>把"AI是什么、从哪来"讲给学生听——它不是凭空出现的魔法，而是几代科学家一步步探索出来的。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 历史与传统文化 -->
-            <div class="scenario-panel" id="history">
-                <div class="scenario-card large">
-                    <div class="scenario-image">
-                        <img src="images/档案馆_沉浸式投影.jpg" alt="千里江山图">
-                    </div>
-                    <div class="scenario-content">
-                        <span class="scenario-tag">场景六</span>
-                        <h3>千里江山图</h3>
-                        <p class="scenario-apply"><strong>适用内容：</strong>宋代历史、古代艺术、传统文化</p>
-                        <p>三面墙展开一幅动态的《千里江山图》——青绿山水之间，有渔人在江上捕鱼，有文人在山间行走，有村舍炊烟袅袅。学生可以"走"进画里，近距离观察宋代人的生活场景。</p>
-                        <p>这既是美术课（欣赏青绿山水），也是语文课（诵读相关诗词），也是历史课（了解宋代社会）——<strong>一幅画，串起多个学科</strong>。</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 美育与艺术 -->
-            <div class="scenario-panel" id="art">
-                <div class="scenario-card">
-                    <div class="scenario-image">
-                        <img src="images/实景_英语情境教室.jpg" alt="梵高艺术之旅">
-                    </div>
-                    <div class="scenario-content">
-                        <span class="scenario-tag">场景七</span>
-                        <h3>梵高艺术之旅</h3>
-                        <p class="scenario-apply"><strong>适用内容：</strong>西方艺术鉴赏、色彩与笔触</p>
-                        <p>学生"走进"梵高的画里——在《星月夜》中，星星在头顶旋转；在《向日葵》前，近距离观察每一笔笔触；在阿尔勒的卧室里，感受画家的生活……</p>
-                        <p>艺术不再是挂在墙上遥不可及的作品，而是学生可以走进去的世界。</p>
-                    </div>
-                </div>
-
-                <div class="scenario-card">
-                    <div class="scenario-image">
-                        <img src="images/实景_平台式介绍界面.jpg" alt="非遗工艺体验">
-                    </div>
-                    <div class="scenario-content">
-                        <span class="scenario-tag">场景八</span>
-                        <h3>非遗工艺体验</h3>
-                        <p class="scenario-apply"><strong>适用内容：</strong>传统文化、手工技艺</p>
-                        <p>以编织为例：学生来到传统编织工坊，看匠人如何操作织布机。然后学生可以在墙面上"动手"编织——选择纱线颜色，操作经纬，体验"一上一下"的编织规律，设计自己的图案。</p>
-                        <p>类似的还有：篆刻体验、剪纸体验、拓印体验、陶艺体验……</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 跨学科主题 -->
-            <div class="scenario-panel" id="interdisciplinary">
-                <div class="scenario-card large">
-                    <div class="scenario-image">
-                        <img src="images/实景_教室教学场景.jpg" alt="丝绸之路大冒险">
-                    </div>
-                    <div class="scenario-content">
-                        <span class="scenario-tag">场景九</span>
-                        <h3>丝绸之路大冒险</h3>
-                        <p class="scenario-apply"><strong>涉及学科：</strong>语文+历史+地理+美术+音乐</p>
-                        <p>这是一个跨学科主题项目。学生组成商队，从长安出发，沿着丝绸之路一路向西——</p>
-                        <div class="subject-grid">
-                            <div class="subject-item">
-                                <span class="subject-icon">📜</span>
-                                <h5>历史</h5>
-                                <p>了解丝绸之路的历史背景和重要人物</p>
-                            </div>
-                            <div class="subject-item">
-                                <span class="subject-icon">🗺️</span>
-                                <h5>地理</h5>
-                                <p>认识沿途的地形地貌、气候特点</p>
-                            </div>
-                            <div class="subject-item">
-                                <span class="subject-icon">📖</span>
-                                <h5>语文</h5>
-                                <p>学习相关的古诗词和散文</p>
-                            </div>
-                            <div class="subject-item">
-                                <span class="subject-icon">🎨</span>
-                                <h5>美术</h5>
-                                <p>设计自己的商队旗帜，绘制敦煌风格的图案</p>
-                            </div>
-                            <div class="subject-item">
-                                <span class="subject-icon">🎵</span>
-                                <h5>音乐</h5>
-                                <p>聆听和学习西域音乐</p>
-                            </div>
-                        </div>
-                        <p>整个学习过程以"商队冒险"的游戏化方式推进，学生在完成任务的过程中，自然地融合了多个学科的知识。</p>
-                        <div class="scenario-value">
-                            <span class="value-icon">🌟</span>
-                            <p><strong>跨学科的本质：</strong>不是把几个学科的知识简单拼凑在一起，而是围绕一个真实的主题或问题，让学生自然而然地运用多个学科的知识和方法去探究和解决。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- AI数字人 -->
-            <div class="scenario-panel" id="ai">
-                <div class="scenario-card large">
-                    <div class="scenario-image">
-                        <img src="images/上师大_智航空间实景.jpg" alt="AI数字人互动">
-                    </div>
-                    <div class="scenario-content">
-                        <span class="scenario-tag">场景十</span>
-                        <h3>AI 数字人互动 —— 校园智慧大脑的第一张面孔</h3>
-                        <p>在空间大屏上，学校专属的IP数字人静静伫立，成为师生进入沉浸式空间遇到的"第一个人"。它不是一个只会说话的虚拟形象，而是<strong>校园智慧大脑的可视化界面</strong>。</p>
-                        
-                        <h4>三种交互方式</h4>
-                        <div class="interaction-types">
-                            <div class="interaction-item">
-                                <div class="interaction-icon">👋</div>
-                                <h5>主动迎宾</h5>
-                                <p>有人走近时，数字人会主动打招呼，欢迎来到沉浸式学习空间，并简要介绍空间的功能和今日推荐内容</p>
-                            </div>
-                            <div class="interaction-item">
-                                <div class="interaction-icon">🧭</div>
-                                <h5>导览动线</h5>
-                                <p>点击"带我参观"，数字人会引导师生了解空间的各个功能区域和使用方法</p>
-                            </div>
-                            <div class="interaction-item">
-                                <div class="interaction-icon">❓</div>
-                                <h5>自由提问</h5>
-                                <p>师生可以随意提问，数字人根据问题类型智能应答</p>
-                            </div>
-                        </div>
-
-                        <h4>三类问题应答</h4>
-                        <div class="qa-table">
-                            <div class="qa-row qa-header">
-                                <div>问题类型</div>
-                                <div>示例</div>
-                                <div>数字人如何回答</div>
-                                <div>背后的能力</div>
-                            </div>
-                            <div class="qa-row">
-                                <div><strong>数据类</strong></div>
-                                <div>"现在植物舱的温度是多少？"</div>
-                                <div>实时调取校园物联网数据，用语音和可视化大屏同步展示答案</div>
-                                <div>真实数据链路</div>
-                            </div>
-                            <div class="qa-row">
-                                <div><strong>技能类</strong></div>
-                                <div>"帮我写一首关于春天的小诗"</div>
-                                <div>调用对应的AI技能，现场演示创作或讲解过程</div>
-                                <div>意图识别+技能路由</div>
-                            </div>
-                            <div class="qa-row">
-                                <div><strong>基础类</strong></div>
-                                <div>"你是怎么被做出来的？"</div>
-                                <div>展示数字人的知识库构成、训练数据来源、技术底座</div>
-                                <div>透明化、可解释的AI教育</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- 场景五（宽卡） -->
+    <article class="scen t-science wide rv" data-cat="science">
+      <div class="scen-img"><img src="images/ai-history.jpg" alt="AI历史长廊——三屏拼接的贯通时间长卷" loading="lazy"><span class="scen-no">场景五</span><span class="scen-subj">科学学科</span></div>
+      <div class="scen-body">
+        <h3>AI 历史长廊</h3>
+        <span class="scen-fit">学科结合：信息科技 + 历史 + 科学</span>
+        <span class="scen-fit">适用内容：人工智能发展史、科技史、信息科技启蒙</span>
+        <p>三块触摸屏拼接成贯通的时间长卷，左右滑动即可浏览 AI 从诞生至今的完整历程。从达特茅斯会议的诞生，到专家系统的兴衰，从深度学习的突破，到大模型时代的到来——一条时间长河，串起 AI 七十余年的起起伏伏。</p>
+        <ul class="blist">
+          <li><strong>长卷式时间轴</strong>&nbsp;——&nbsp;三屏拼接成贯通的时间长河，左右滑动浏览 AI 完整历程，国际与中国 AI 成果交相辉映</li>
+          <li><strong>里程碑点选</strong>&nbsp;——&nbsp;点击关键节点，弹出人物故事、技术原理、时代影响的详情卡片，让学生认识图灵、麦卡锡、李飞飞等推动 AI 发展的人</li>
+          <li><strong>跨屏分阶段</strong>&nbsp;——&nbsp;三屏分别呈现「起源 → 发展 → 大模型时代」三个阶段，可同步对比，也可联动展开某一专题深入探究</li>
+          <li><strong>AI 语音讲解</strong>&nbsp;——&nbsp;每个里程碑都配有 AI 语音讲解，讲述背后的故事与意义</li>
+        </ul>
+        <div class="callout co-teal">
+          <div class="co-t"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><circle cx="9" cy="14" r="1.3" fill="currentColor"/><circle cx="15" cy="14" r="1.3" fill="currentColor"/><path d="M12 8V5M9 5h6"/></svg>教育价值</div>
+          <p>把「AI 是什么、从哪来」讲给学生听——它不是凭空出现的魔法，而是几代科学家一步步探索出来的。这面墙是「处处可学习」的知识入口，也是培养科学精神的活教材。</p>
         </div>
-    </section>
+      </div>
+    </article>
 
-    <!-- 预期成效 -->
-    <section class="section" id="impact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-num">05</span>
-                <h2 class="section-title">预期成效</h2>
-                <p class="section-subtitle">Expected Impact</p>
-            </div>
+    <!-- 场景六 -->
+    <article class="scen t-history rv" data-cat="history">
+      <div class="scen-img"><img src="images/qianli-mountain.jpg" alt="千里江山图——动态青绿山水沉浸展开" loading="lazy"><span class="scen-no">场景六</span><span class="scen-subj">历史与传统文化</span></div>
+      <div class="scen-body">
+        <h3>千里江山图</h3>
+        <span class="scen-fit">适用内容：宋代历史、古代艺术、传统文化</span>
+        <p>三面墙展开一幅动态的《千里江山图》——青绿山水之间，有渔人在江上捕鱼，有文人在山间行走，有村舍炊烟袅袅。学生可以「走」进画里，近距离观察宋代人的生活场景。</p>
+        <p>这既是美术课（欣赏青绿山水），也是语文课（诵读相关诗词），也是历史课（了解宋代社会）——<strong>一幅画，串起多个学科</strong>。</p>
+      </div>
+    </article>
 
-            <div class="impact-grid">
-                <div class="impact-card">
-                    <div class="impact-icon">🎒</div>
-                    <h3>对学生</h3>
-                    <ul>
-                        <li><strong>学习更有兴趣</strong>：沉浸式、互动化的学习方式，让学习变得有趣，激发内在学习动机</li>
-                        <li><strong>理解更加深刻</strong>：亲身经历的体验式学习，比被动听讲理解更深刻、记忆更牢固</li>
-                        <li><strong>视野更加开阔</strong>：可以去到平时去不了的地方——深海、太空、古代、微观世界……拓展认知边界</li>
-                        <li><strong>能力更加综合</strong>：跨学科主题学习，培养综合运用知识解决问题的能力</li>
-                        <li><strong>表达更加自信</strong>：作品有了更好的展示平台，学生更愿意表达和分享</li>
-                    </ul>
-                </div>
+    <!-- 场景七 -->
+    <article class="scen t-art rv" data-cat="art">
+      <div class="scen-body" style="padding-top:28px">
+        <h3>梵高艺术之旅</h3>
+        <span class="scen-fit">适用内容：西方艺术鉴赏、色彩与笔触</span>
+        <p>学生「走进」梵高的画里——在《星月夜》中，星星在头顶旋转；在《向日葵》前，近距离观察每一笔笔触；在阿尔勒的卧室里，感受画家的生活……</p>
+        <p><strong>艺术不再是挂在墙上遥不可及的作品，而是学生可以走进去的世界。</strong></p>
+      </div>
+    </article>
 
-                <div class="impact-card">
-                    <div class="impact-icon">👩‍🏫</div>
-                    <h3>对教师</h3>
-                    <ul>
-                        <li><strong>教学方式创新</strong>：有了新的教学工具和空间，倒逼教师创新教学设计</li>
-                        <li><strong>专业能力提升</strong>：学习沉浸式教学方法，提升信息化教学能力</li>
-                        <li><strong>跨学科教研</strong>：不同学科老师围绕沉浸式空间开展教研，打破学科壁垒</li>
-                        <li><strong>教学成果丰富</strong>：可以产出沉浸式教学案例、论文等教研成果</li>
-                    </ul>
-                </div>
+    <!-- 场景八 -->
+    <article class="scen t-art rv" data-cat="art">
+      <div class="scen-body" style="padding-top:28px">
+        <h3>非遗工艺体验</h3>
+        <span class="scen-fit">适用内容：传统文化、手工技艺</span>
+        <p>以编织为例：学生来到传统编织工坊，看匠人如何操作织布机。然后学生可以在墙面上「动手」编织——选择纱线颜色，操作经纬，体验「一上一下」的编织规律，设计自己的图案。</p>
+        <p>类似的还有：篆刻体验、剪纸体验、拓印体验、陶艺体验……</p>
+      </div>
+    </article>
 
-                <div class="impact-card">
-                    <div class="impact-icon">🏫</div>
-                    <h3>对学校</h3>
-                    <ul>
-                        <li><strong>办学特色</strong>：打造沉浸式跨学科学习的特色品牌，提升学校影响力</li>
-                        <li><strong>课程创新</strong>：推动学校课程改革，丰富课程供给</li>
-                        <li><strong>资源共享</strong>：空间的课程资源、教学案例、数字素材等可以在校内共享复用，也可以与兄弟学校交流共建</li>
-                        <li><strong>示范引领</strong>：形成可复制可推广的经验，发挥示范作用</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- 场景九 -->
+    <article class="scen t-cross rv" data-cat="cross">
+      <div class="scen-body" style="padding-top:28px">
+        <h3>丝绸之路大冒险</h3>
+        <span class="scen-fit">涉及学科：语文 + 历史 + 地理 + 美术 + 音乐</span>
+        <p>这是一个跨学科主题项目。学生组成商队，从长安出发，沿着丝绸之路一路向西——</p>
+        <ul class="blist">
+          <li><strong>历史</strong>：了解丝绸之路的历史背景和重要人物</li>
+          <li><strong>地理</strong>：认识沿途的地形地貌、气候特点</li>
+          <li><strong>语文</strong>：学习相关的古诗词和散文</li>
+          <li><strong>美术</strong>：设计自己的商队旗帜，绘制敦煌风格的图案</li>
+          <li><strong>音乐</strong>：聆听和学习西域音乐</li>
+        </ul>
+        <p>整个学习过程以「商队冒险」的游戏化方式推进，学生在完成任务的过程中，自然地融合了多个学科的知识。</p>
+        <div class="callout co-green">
+          <div class="co-t"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.9 5.1L19 9l-5.1 1.9L12 16l-1.9-5.1L5 9l5.1-1.9z"/></svg>跨学科的本质</div>
+          <p>不是把几个学科的知识简单拼凑在一起，而是围绕一个真实的主题或问题，让学生自然而然地运用多个学科的知识和方法去探究和解决。沉浸式空间最大的优势，就是能创设出这样「真实」的主题情境。</p>
         </div>
-    </section>
+      </div>
+    </article>
 
-    <!-- 页脚 -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-quote">
-                <p>教育的本质，是一棵树摇动另一棵树，一朵云推动另一朵云</p>
-            </div>
-            <div class="footer-bottom">
-                <p>沉浸式学习空间，就是要让知识"活"起来，让学习"动"起来</p>
-            </div>
+    <!-- 场景十（宽卡） -->
+    <article class="scen t-ai wide rv" data-cat="ai">
+      <div class="scen-img"><img src="images/digital-human.jpg" alt="AI数字人——校园智慧大脑数据驾驶舱" loading="lazy"><span class="scen-no">场景十</span><span class="scen-subj">AI 数字人互动</span></div>
+      <div class="scen-body">
+        <h3>AI 数字人互动<span style="font-size:15px;color:var(--ink-soft);font-family:var(--body);margin-left:10px">—— 校园智慧大脑的第一张面孔</span></h3>
+        <p>在空间大屏上，学校专属的 IP 数字人静静伫立，成为师生进入沉浸式空间遇到的「第一个人」。它不是一个只会说话的虚拟形象，而是<strong>校园智慧大脑的可视化界面</strong>——向每一位来访者展示：这所学校的 AI「懂什么、会什么、靠什么」。</p>
+        <div>
+          <b style="font-size:15px">三种交互方式</b>
+          <p style="margin-top:6px">数字人支持<strong>语音对话</strong>和<strong>触屏点击</strong>两种交互方式，师生可以自由选择：</p>
+          <ul class="blist" style="margin-top:8px">
+            <li><strong>主动迎宾</strong>：有人走近时，数字人会主动打招呼，欢迎来到沉浸式学习空间，并简要介绍空间的功能和今日推荐内容</li>
+            <li><strong>导览动线</strong>：点击「带我参观」，数字人会引导师生了解空间的各个功能区域和使用方法</li>
+            <li><strong>自由提问</strong>：师生可以随意提问，数字人根据问题类型智能应答</li>
+          </ul>
         </div>
-    </footer>
+        <div class="qa-table">
+          <div class="qa-row">
+            <div class="qk"><span class="pill" style="background:var(--teal)">数据类</span></div>
+            <div class="qe">「现在植物舱的温度是多少？」「今天图书馆有多少人？」</div>
+            <div class="qa">数字人「先读数据、再作答」——实时调取校园物联网数据，用语音和可视化大屏同步展示答案</div>
+            <div class="qb">真实数据链路，让师生看到「一句回答背后，是一条真实的数据在流动」</div>
+          </div>
+          <div class="qa-row">
+            <div class="qk"><span class="pill" style="background:var(--coral)">技能类</span></div>
+            <div class="qe">「帮我写一首关于春天的小诗」「给我讲讲光合作用」</div>
+            <div class="qa">调用对应的 AI 技能，现场演示创作或讲解过程，答案在大屏上同步呈现</div>
+            <div class="qb">意图识别 + 技能路由，统一调度不同的 AI 能力</div>
+          </div>
+          <div class="qa-row">
+            <div class="qk"><span class="pill" style="background:var(--violet)">基础类</span></div>
+            <div class="qe">「你是怎么被做出来的？」「你背后有什么数据支撑？」</div>
+            <div class="qa">展示数字人的知识库构成、训练数据来源、技术底座，让 AI 不再是「黑箱」</div>
+            <div class="qb">透明化、可解释的 AI 教育理念</div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+<!-- ================= 四、预期成效 ================= -->
+<section class="section" id="outcomes">
+  <div class="sec-head rv">
+    <span class="sec-chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M17 5H7v5a5 5 0 0 0 10 0z"/><path d="M17 6h2a2 2 0 0 1 0 4h-2M7 6H5a2 2 0 0 0 0 4h2"/></svg>预期成效</span>
+    <h2>让知识「活」起来，让学习「动」起来</h2>
+    <svg class="wave" width="150" height="10" viewBox="0 0 150 10" aria-hidden="true"><path d="M2 6 Q 12 1, 22 6 T 42 6 T 62 6 T 82 6 T 102 6 T 122 6 T 142 6" fill="none" stroke="#58A83E" stroke-width="3.5" stroke-linecap="round"/></svg>
+  </div>
 
-    <script src="script.js"></script>
+  <div class="out-grid">
+    <div class="out-card out-s rv">
+      <div class="oc-head">
+        <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg></span>
+        <h3>对学生</h3>
+      </div>
+      <ul>
+        <li><svg class="tick" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6B4A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg><span><b>学习更有兴趣</b>：沉浸式、互动化的学习方式，让学习变得有趣，激发内在学习动机</span></li>
+        <li><svg class="tick" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6B4A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg><span><b>理解更加深刻</b>：亲身经历的体验式学习，比被动听讲理解更深刻、记忆更牢固</span></li>
+        <li><svg class="tick" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6B4A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg><span><b>视野更加开阔</b>：可以去到平时去不了的地方——深海、太空、古代、微观世界……拓展认知边界</span></li>
+        <li><svg class="tick" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6B4A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg><span><b>能力更加综合</b>：跨学科主题学习，培养综合运用知识解决问题的能力</span></li>
+        <li><svg class="tick" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6B4A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg><span><b>表达更加自信</b>：作品有了更好的展示平台，学生更愿意表达和分享</span></li>
+      </ul>
+    </div>
+
+    <div class="out-card out-t rv">
+      <div class="oc-head">
+        <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></span>
+        <h3>对教师</h3>
+      </div>
+      <ul>
+        <li><svg class="tick" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg><span><b>教学方式创新</b>：有了新的教学工具和空间，倒逼教师创新教学设计</span></li>
+        <li><svg class="tick" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg><span><b>专业能力提升</b>：学习沉浸式教学方法，提升信息化教学能力</span></li>
+        <li><svg class="tick" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg><span><b>跨学科教研</b>：不同学科老师围绕沉浸式空间开展教研，打破学科壁垒</span></li>
+        <li><svg class="tick" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg><span><b>教学成果丰富</b>：可以产出沉浸式教学案例、论文等教研成果</span></li>
+      </ul>
+    </div>
+
+    <div class="out-card out-g rv">
+      <div class="oc-head">
+        <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M10 21v-4h4v4M9 11h.01M15 11h.01"/></svg></span>
+        <h3>对学校</h3>
+      </div>
+      <ul>
+        <li><svg class="tick" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7C6CF0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg><span><b>办学特色</b>：打造沉浸式跨学科学习的特色品牌，提升学校影响力</span></li>
+        <li><svg class="tick" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7C6CF0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg><span><b>课程创新</b>：推动学校课程改革，丰富课程供给</span></li>
+        <li><svg class="tick" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7C6CF0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg><span><b>资源共享</b>：空间的课程资源、教学案例、数字素材等可以在校内共享复用，也可以与兄弟学校交流共建，最大化资源价值</span></li>
+        <li><svg class="tick" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7C6CF0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 7"/></svg><span><b>示范引领</b>：形成可复制可推广的经验，发挥示范作用</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 页脚 ================= -->
+<footer class="footer">
+  <p class="f-quote">—— 教育的本质，是一棵树摇动另一棵树，一朵云推动另一朵云 ——</p>
+  <p class="f-sub">沉浸式学习空间，就是要让知识「活」起来，让学习「动」起来</p>
+  <div class="f-line"></div>
+  <p class="f-note">AI 跨学科沉浸式数智学习空间 · 沉浸式数智学习空间：在沉浸中「做中学」</p>
+</footer>
+
+<button id="toTop" aria-label="返回顶部">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+<script src="script.js" defer></script>
 </body>
 </html>
