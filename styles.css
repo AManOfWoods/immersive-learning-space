@@ -411,6 +411,100 @@ section{scroll-margin-top:76px}
   .cmp-row>*+*{margin-top:8px}
 }
 
+/* ---------- 手机端：纵向卡片流 / 滚动吸附 / 紧凑排版 ---------- */
+.feat-mobile-title{display:none}
+@media (max-width:767px){
+  html{scroll-snap-type:y proximity;overflow-x:hidden}
+  body{overflow-x:clip}
+  .nav-inner{padding:10px 14px}
+  .logo{font-size:17px;gap:8px}
+  .logo .mark{width:30px;height:30px}
+  .section{padding:58px 16px 20px;min-width:0}
+  .sec-head{margin-bottom:26px}
+  .sec-head h2{font-size:clamp(25px,7.8vw,32px)}
+  .block-card{padding:22px 18px}
+  .hero{min-height:100svh;padding:102px 16px 38px;gap:28px;
+    scroll-snap-align:start;scroll-snap-stop:always;scroll-margin-top:64px}
+  .hero-tag{font-size:12px;padding:6px 12px;margin-bottom:16px}
+  .hero h1{font-size:clamp(33px,10vw,44px)}
+  .hero .desc{font-size:14.5px;line-height:1.7}
+  .hero-stats{gap:9px;max-width:none}
+  .stat{padding:12px 13px;border-radius:15px;min-width:0}
+  .stat .num{font-size:22px}
+  .stat .num.wide{font-size:17px}
+  .stat .lbl{font-size:12px;line-height:1.5}
+  .hero-frame{transform:none;border-width:4px;border-radius:24px}
+  .hero-badge{font-size:11px;padding:7px 10px;border-radius:12px;gap:5px}
+  .hero-badge svg{width:13px;height:13px}
+  .hero-badge.b1{left:5px;top:5px}
+  .hero-badge.b2{right:5px;bottom:12px}
+  .hero-badge.b3{left:5px;bottom:5px}
+  .hero-caption{font-size:12px;line-height:1.6;margin-top:14px}
+
+  /* 次要信息收紧：四要素只留关键词，对比只保留新空间价值 */
+  .four-elems{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .felem{padding:12px 13px;border-radius:14px}
+  .felem .fe-t{font-size:15px;margin:0;gap:8px}
+  .felem .fe-t .n{width:26px;height:26px;border-radius:8px;font-size:12px}
+  .felem p{display:none}
+  .cmp{gap:7px}
+  .cmp-row{display:grid;grid-template-columns:76px minmax(0,1fr);gap:8px;
+    align-items:center;padding:8px 10px;border-radius:13px}
+  .cmp-row>*+*{margin-top:0}
+  .cmp-dim{font-size:13.5px}
+  .cmp-old{display:none}
+  .cmp-new{font-size:13px;padding:5px 9px;border-radius:9px;line-height:1.45}
+  .cycle-wrap{gap:18px}
+  .cycle-note{padding:16px 17px}
+  .cycle-note p{font-size:14px}
+  .spec-table th,.spec-table td{padding:10px 9px;font-size:12.5px;line-height:1.55}
+  .spec-table th.k{white-space:normal}
+
+  /* 六大功能：取消横滑 Tab，六张卡全部纵排并逐卡吸附 */
+  .feat-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;overflow:visible;padding:4px 0 14px}
+  .ftab{min-width:0;padding:9px 10px;border-radius:14px;font-size:12.5px;
+    line-height:1.4;white-space:normal;justify-content:flex-start;text-align:left}
+  .ftab .n{width:22px;height:22px;flex:none}
+  .feat-panel,.feat-panel.on{display:grid;grid-template-columns:1fr;gap:16px;
+    align-content:center;min-height:calc(82svh - 88px);margin-bottom:18px;
+    padding:22px 18px;border-radius:20px;animation:none;
+    scroll-snap-align:start;scroll-snap-stop:always;scroll-margin-top:76px}
+  .feat-panel>.feat-imgs.two{grid-template-columns:1fr}
+  .feat-panel .figure img{width:100%;aspect-ratio:16/9;object-fit:cover}
+  .feat-panel:last-child{margin-bottom:0}
+  .feat-mobile-title{display:flex;align-items:center;justify-content:space-between;
+    gap:12px;padding-bottom:12px;border-bottom:2px solid var(--coral-soft)}
+  .feat-mobile-title b{font-family:var(--disp);font-weight:400;font-size:24px;color:var(--coral)}
+  .feat-mobile-title span{font-size:12px;font-weight:800;color:var(--ink-soft);white-space:nowrap}
+  .feat-panel .para{font-size:14.5px;line-height:1.7;margin-bottom:10px}
+  .feat-imgs.two{gap:9px}
+  .feat-sub span{font-size:12px;padding:5px 10px}
+
+  /* 学科筛选换行，场景卡随竖向滚动自动定位 */
+  .filter-bar{flex-wrap:wrap;gap:8px;overflow:visible;padding:4px 0 16px}
+  .fbtn{flex:1 1 30%;min-width:0;padding:9px 10px;font-size:12.5px;
+    line-height:1.4;white-space:normal}
+  .scen-grid{gap:18px}
+  .scen{min-height:calc(100svh - 100px);scroll-snap-align:start;
+    scroll-snap-stop:always;scroll-margin-top:76px;min-width:0}
+  .scen:not(:has(.scen-img)){min-height:calc(72svh - 80px)}
+  .scen:not(:has(.scen-img)) .scen-body{justify-content:center}
+  .scen-img img{width:100%;aspect-ratio:16/9;object-fit:cover}
+  .scen-body{padding:20px 18px 22px;gap:12px}
+  .scen-body h3{font-size:22px;line-height:1.35}
+  .scen-body h3 span{display:block;margin:6px 0 0!important;font-size:13px!important}
+  .scen-body p{font-size:14px;line-height:1.7}
+  .scen-fit{font-size:12px;padding:5px 10px}
+  .steps{gap:12px}
+  .step .st p{font-size:13.5px;line-height:1.65}
+  .callout{padding:16px 17px;border-radius:16px}
+  .qa-row{padding:12px 13px}
+  .out-card{padding:22px 20px}
+  .footer{margin-top:54px;padding:52px 20px 32px;border-radius:38px 38px 0 0}
+  #toTop{display:none!important}
+}
+
 /* ---------- 降低动效偏好 ---------- */
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}

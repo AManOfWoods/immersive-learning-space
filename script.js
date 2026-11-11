@@ -97,13 +97,40 @@
   }, { threshold: 0.6 });
   counters.forEach(function(c){ cObserver.observe(c); });
 
-  /* ---------- 六大核心功能 Tab 切换 ---------- */
+  /* ---------- 六大核心功能：桌面 Tab / 手机纵向卡片流 ---------- */
   var ftabs = document.querySelectorAll(".ftab");
   var fpanels = document.querySelectorAll(".feat-panel");
+  var mobileView = window.matchMedia("(max-width: 767px)");
+
+  /* 手机端六张卡全部展开，在卡内补上序号与标题，滚动时也能知道当前功能 */
+  fpanels.forEach(function(panel, i){
+    if(panel.querySelector(".feat-mobile-title")) return;
+    var tab = document.querySelector('.ftab[data-fp="' + panel.getAttribute("data-fp") + '"]');
+    if(!tab) return;
+    var heading = document.createElement("div");
+    heading.className = "feat-mobile-title";
+    var title = document.createElement("b");
+    title.textContent = tab.textContent.replace(/^\d+/, "");
+    var no = document.createElement("span");
+    no.textContent = "0" + (i + 1) + " / 06";
+    heading.appendChild(title);
+    heading.appendChild(no);
+    panel.insertBefore(heading, panel.firstChild);
+  });
+
+  function setFeatureTab(key){
+    ftabs.forEach(function(t){ t.classList.toggle("on", t.getAttribute("data-fp") === key); });
+  }
+
   ftabs.forEach(function(tab){
     tab.addEventListener("click", function(){
       var key = tab.getAttribute("data-fp");
-      ftabs.forEach(function(t){ t.classList.toggle("on", t === tab); });
+      setFeatureTab(key);
+      if(mobileView.matches){
+        var target = document.querySelector('.feat-panel[data-fp="' + key + '"]');
+        if(target) target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+        return;
+      }
       fpanels.forEach(function(p){
         var on = p.getAttribute("data-fp") === key;
         p.classList.toggle("on", on);
@@ -114,6 +141,15 @@
       if(!reduceMotion) tab.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
     });
   });
+
+  /* 手机自然下滑时，顶部功能按钮跟随当前卡片更新 */
+  var fpObserver = new IntersectionObserver(function(entries){
+    if(!mobileView.matches) return;
+    entries.forEach(function(entry){
+      if(entry.isIntersecting) setFeatureTab(entry.target.getAttribute("data-fp"));
+    });
+  }, { rootMargin: "-18% 0px -62% 0px", threshold: 0 });
+  fpanels.forEach(function(panel){ fpObserver.observe(panel); });
 
   /* ---------- 教学场景筛选 ---------- */
   var fbtns = document.querySelectorAll(".fbtn");
@@ -131,6 +167,9 @@
       /* 筛选后只剩一张卡时占满整行，避免半行孤卡 */
       visible.forEach(function(c){ c.classList.remove("wide"); });
       if(visible.length === 1) visible[0].classList.add("wide");
+      if(mobileView.matches && visible[0]){
+        visible[0].scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+      }
     });
   });
 
